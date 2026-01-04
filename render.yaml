@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: finance-mcp-server
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_BASE_URL
+        value: https://api.fullbor.ai/v2
+      - key: TEST_USERNAME
+        value: Aditya.bhate@digital-alpha.com
+      - key: TEST_PASSWORD
+        value: Adi@da#129
+      - key: AWS_REGION
+        value: us-east-2
+      - key: USER_POOL_ID
+        value: us-east-2_IJ1C0mWXW
+      - key: CLIENT_ID
+        value: 1lntksiqrqhmjea6obrrrrnmh1
+      - key: LOG_LEVEL
+        value: info
