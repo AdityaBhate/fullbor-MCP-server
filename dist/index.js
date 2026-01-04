@@ -122,7 +122,9 @@ server.setRequestHandler(GetPromptRequestSchema, async (request) => {
     throw new Error(`Unknown prompt: ${name}`);
 });
 async function main() {
-    const isSseMode = process.env.MCP_TRANSPORT === 'sse' || process.env.NODE_ENV === 'production';
+    const isSseMode = process.env.MCP_TRANSPORT === 'sse' ||
+        process.env.NODE_ENV === 'production' ||
+        process.env.PORT !== undefined;
     if (isSseMode) {
         // SSE Transport (for Render/Deployment)
         const app = express();
