@@ -9,7 +9,7 @@ const envSchema = z.object({
 
     // Cognito Configuration
     AWS_REGION: z.string().default('us-east-2'),
-    USER_POOL_ID: z.string().default('us-east2_IJ1C0mWXW'),
+    USER_POOL_ID: z.string().default('us-east-2_IJ1C0mWXW'),
     CLIENT_ID: z.string().default('1lntksiqrqhmjea6obrrrrnmh1'),
     TEST_USERNAME: z.string().min(1, 'TEST_USERNAME is required'),
     TEST_PASSWORD: z.string().min(1, 'TEST_PASSWORD is required'),
